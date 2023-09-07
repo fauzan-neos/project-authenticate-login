@@ -34,20 +34,20 @@ Route::get('/dashboard', function () {
 })->middleware('auth'); 
 
 Route::controller(UserController::class)->group(function () {
-    Route::get('/dashboard/user', 'index');
-    Route::put('/dashboard/user/update', 'update');
-    Route::get('/dashboard/user/edit', 'edit');
-    Route::get('/dashboard/user/show', 'show');
+    Route::get('/dashboard/user', 'index')->name('dashboard.user');
+    Route::put('/dashboard/user/update', 'update')->name('dashboard.user.update');
+    Route::get('/dashboard/user/edit', 'edit')->name('dashboard.user.edit');
+    Route::get('/dashboard/user/show', 'show')->name('dashboard.user.show');
 });
 
 Route::controller(AdminController::class)->group(function () {
-    Route::get('/dashboard/admin', 'index');
-    Route::post('/dashboard/admin/add', 'store');
+    Route::get('/dashboard/admin', 'index')->name('dashboard.admin');
+    Route::post('/dashboard/admin/add', 'store')->name('dashboard.admin.add');
     Route::get('/dashboard/internal/create-user', 'create')->name('dashboard.admin.create');
-    Route::put('/dashboard/admin/update', 'update');
+    Route::put('/dashboard/admin/update', 'update')->name('dashboard.admin.update');
     Route::get('/dashboard/admin/edit/{id}', 'edit')->name('dashboard.admin.edit');
-    Route::get('/dashboard/admin/show/{id}', 'show');
-    Route::delete('/dashboard/admin/{id}', 'destroy');
+    Route::get('/dashboard/admin/show/{id}', 'show')->name('dashboard.admin.show');
+    Route::delete('/dashboard/admin/{id}', 'destroy')->name('dashboard.admin.delete');
 });
 
 // Route::resource('/dashboard/admin', AdminController::class);

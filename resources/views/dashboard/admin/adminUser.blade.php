@@ -31,7 +31,7 @@
         @endif
     </div>
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <a href="{{ route('dashboard.admin.create') }}" class="btn btn-success badge">Add New User</a>
+        <a href="{{ route('dashboard.admin.create') }}" class="btn btn-success badge rounded-pill">Add New User</a>
     </div>
     <table class="table">
         <thead>
@@ -49,13 +49,9 @@
                     <td>{{ $user->username }}</td>
                     <td>{{ $user->email }}</td>
                     <td>
-                        <button class="badge bg-warning border-0">
-                            <a href="{{ route('dashboard.admin.edit', [$user->id]) }}" class="btn btn-warning badge rounded-pill">Update</a>
-                        </button>
-                        <button class="badge bg-info border-0">
-                            <a href="/dashboard/admin/show/{{ $user->id }}">See Detail</a>
-                        </button>
-                        <form action="/dashboard/admin/{{ $user->id }}" method="post" class="d-inline">
+                        <a href="{{ route('dashboard.admin.edit', [$user->id]) }}" class="btn btn-warning badge rounded-pill">Update</a>
+                        <a href="{{ route('dashboard.admin.show', [$user->id]) }}" class="btn btn-info badge rounded-pill">See Detail</a>
+                        <form action="{{ route('dashboard.admin.delete', [$user->id]) }}" method="post" class="d-inline">
                             @csrf
                             @method('delete')
                             <button class="badge bg-danger border-0 rounded-pill" type="submit">

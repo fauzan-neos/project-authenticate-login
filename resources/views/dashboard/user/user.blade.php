@@ -30,8 +30,8 @@
                     <td>{{ $user->username }}</td>
                     <td>{{ $user->email }}</td>
                     <td>
-                        <a href="/dashboard/user/edit" class="btn btn-warning badge rounded-pill">Update</a>
-                        <a href="/dashboard/user/show" class="btn btn-info badge rounded-pill">See Detail</a>
+                        <a href="{{ route('dashboard.user.edit') }}" class="btn btn-warning badge rounded-pill">Update</a>
+                        <a href="{{ route('dashboard.user.show') }}" class="btn btn-info badge rounded-pill">See Detail</a>
                     </td>
                 </tr>
             </tbody>

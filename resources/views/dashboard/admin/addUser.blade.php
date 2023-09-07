@@ -5,7 +5,7 @@
         <div class="col-lg-5">
             <main class="form">
                 <h1 class="h3 mb-3 font-weight-normal text-center">Add New User</h1>
-                <form action="/dashboard/admin/add" method="post">
+                <form action="{{ route('dashboard.admin.add') }}" method="post">
                     @csrf
                         <label for="name" class="sr-only">Name</label>
                         <input type="text" name="name" id="name" class="form-control rounded-top @error('name') is-invalid @enderror" placeholder="Name" autofocus required>
@@ -46,16 +46,12 @@
                                 {{ $message }}
                             </div>
                         @enderror
-                        <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Add</button>
+                        <button class="btn btn-md btn-primary btn-block mt-3" type="submit">Add</button>
                 </form>
             </main>
         </div>
     </div>
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom ">
-        <h4>
-            <button class=" btn primary badge rounded-pill">
-                <a href="/dashboard/admin" style="text-decoration: none">Back</a>
-            </button>
-        </h4>
+        <a href="{{ route('dashboard.admin') }}" style="text-decoration: none" class="btn btn-info badge">Back</a>
     </div>
 @endsection

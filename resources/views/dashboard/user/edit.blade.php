@@ -5,7 +5,7 @@
         <div class="col-lg-5">
             <main class="form">
                 <h1 class="h3 mb-3 font-weight-normal text-center">Update Data</h1>
-                <form action="/dashboard/user/update" method="post">
+                <form action="{{ route('dashboard.user.update') }}" method="post">
                     @method('put')
                     @csrf
                     @foreach ($users as $user)
@@ -54,10 +54,6 @@
         </div>
     </div>
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom ">
-        <h4>
-            <button class=" btn primary badge rounded-pill">
-                <a href="/dashboard/user" style="text-decoration: none">Back</a>
-            </button>
-        </h4>
+        <a href="{{ route('dashboard.admin') }}" style="text-decoration: none" class="btn btn-info badge">Back</a>
     </div>
 @endsection
