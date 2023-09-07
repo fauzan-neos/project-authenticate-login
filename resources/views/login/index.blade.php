@@ -41,9 +41,9 @@
           <form action="/login" method="post">
               @csrf
 
-              <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email address" required autofocus>
-              <label for="email" class="sr-only">Email address</label>
-              @error('email')
+              <input type="text" name="email_username" id="text" class="form-control @error('text') is-invalid @enderror" placeholder="Email address / Username" required autofocus>
+              <label for="text" class="sr-only">Email address and Username</label>
+              @error('text')
                 <div class="invalid-feedback">
                   {{ $message }}
                 </div>
